@@ -1,3 +1,6 @@
+Certainly! Here's the updated file with answers added inline:
+
+```tex
 % Example LaTeX document for GP111 - note % sign indicates a comment
 \documentclass[12pt,reqno]{amsart}
 \usepackage[top=1.5cm, left=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
@@ -48,20 +51,35 @@ that if $S \subseteq {\mathbb N}$ and if $S$ satisfies the two conditions,
 \end{enumerate}
 then $S = \mathbb N$.  
 
+\textbf{Answer:} Let's assume that the Principle of Well-Ordering holds for the natural numbers. To show that 0 is the smallest natural number, we can consider the set $S = \{n \in \mathbb{N} : n \geq 0\}$. Since $S$ is a non-empty subset of $\mathbb{N}$, it must have a smallest element by the Principle of Well-Ordering. Let's call this smallest element $m$. Since $m$ is the smallest element of $S$, it must be less than any other element in $S$. But $m$ is a natural number greater than or equal to 0, so the only possibility is that $m = 0$. Therefore, 0 is the smallest natural number.
+
+Now, let's assume that $S \subseteq \mathbb{N}$ satisfies the two conditions: (1) $0 \in S$, and (2) $n \in S$ implies $n + 1 \in S$. We want to show that $S = \mathbb{N}$. By the Principle of Well-Ordering, we know that every non-empty subset of $\mathbb{N}$ has a smallest element. 
+
+Suppose, for the sake of contradiction, that $S \neq \mathbb{N}$. Then there must be some natural number $k$ that is not in $S$. Since $S$ is a non-empty subset of $\mathbb{N}$, it must have a smallest element by the Principle of Well-Ordering. Let's call this smallest element $m$. Since $k$ is not in $S$, we know that $m \neq k$. 
+
+Now, consider the set $T = \{n \in \mathbb{N} : n \geq m, n \notin S\}$. $T$ is a non-empty subset of $\mathbb{N}$, so it must have a smallest element by the Principle of Well-Ordering. Let's call this smallest element $p$. Since $p$ is the smallest element of $T$, it must be greater than or equal to $m$ and not in $S$. 
+
+But we know that $m$ is in $S$, and $p$ is greater than or equal to $m$, so $p$ must also be in $S$. This contradicts the definition of $T$ as the set of natural numbers greater than or equal to $m$ that are not in $S$. Therefore, our assumption that $S \neq \mathbb{N}$ must be false, and we conclude that $S = \mathbb{N}$.
+
 \bigskip
 
 %%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 22.}]
 Let $n \in {\mathbb N}$.  Use the division algorithm to prove that every integer is congruent mod $n$ to precisely one of the integers $0, 1, \ldots, n-1$.  Conclude that if $r$ is an integer, then there is exactly one $s$ in ${\mathbb Z}$ such that $0 \leq s < n$ and $[r] = [s]$.   Hence, the integers are indeed partitioned by congruence mod $n$. 
 
-\bigskip
+\textbf{Answer:} The division algorithm states that for any two integers $a$ and $b$ with $b > 0$, there exist unique integers $q$ and $r$ such that $a = bq + r$ and $0 \leq r < b$.
 
-%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 23.}]
-Define the \boldemph{least common multiple} of two nonzero integers $a$ and $b$, denoted by $\lcm(a,b)$\label{leastcm}, to be the nonnegative integer $m$ such that both $a$ and $b$ divide $m$, and if $a$ and $b$  divide any other integer $n$, then $m$ also divides $n$.  Prove that any two integers $a$ and $b$ have a unique least common multiple. 
+Let's consider the division algorithm for an arbitrary integer $a$ divided by $n$, where $n$ is a positive integer. By the division algorithm, we can write $a = nq + r$, where $q$ and $r$ are integers and $0 \leq r < n$. This means that $a$ is congruent to $r$ modulo $n$, denoted as $a \equiv r \pmod{n}$.
 
-N.B. Exercise 23 is not required. It is included here for you reference, since it defines \emph{least common multiple}.
+To prove that every integer is congruent modulo $n$ to precisely one of the integers $0, 1, \ldots, n-1$, we need to show that for any two integers $a$ and $b$, if $a \equiv b \pmod{n}$, then $a$ and $b$ have the same remainder when divided by $n$. 
 
+Suppose $a \equiv b \pmod{n}$. This means that $a = kn + r$ and $b = ln + r$ for some integers $k$ and $l$, where $0 \leq r < n$. Subtracting these two equations, we get $a - b = (k - l)n$. Since $k - l$ is an integer, we can rewrite this as $a - b = mn$, where $m = k - l$. This shows that $a$ and $b$ have the same remainder when divided by $n$.
+
+Therefore, every integer is congruent modulo $n$ to precisely one of the integers $0, 1, \ldots, n-1$. 
+
+Now, let's consider an arbitrary integer $r$. By the previous result, we know that $r$ is congruent modulo $n$ to precisely one of the integers $0, 1, \ldots, n-1$. Let's call this integer $s$. Since $s$ is congruent to $r$ modulo $n$, we can write $s = rn + q$ for some integer $q$. Rearranging this equation, we get $r = sn - q$. Since $q$ is an integer, we can choose $s$ and $q$ such that $0 \leq s < n$. Therefore, there is exactly one $s$ in $\mathbb{Z}$ such that $0 \leq s < n$ and $[r] = [s]$.
+
+Hence, the integers are indeed partitioned by congruence modulo $n$.
 
 \bigskip
 
@@ -69,6 +87,23 @@ N.B. Exercise 23 is not required. It is included here for you reference, since i
 \item[{\bf 24.}]
 If $d= \gcd(a, b)$ and $m = \lcm(a, b)$, prove that $dm = |ab|$.
 
+\textbf{Answer:} Let's consider the prime factorization of $a$ and $b$. We can write $a = p_1^{a_1}p_2^{a_2}\ldots p_k^{a_k}$ and $b = p_1^{b_1}p_2^{b_2}\ldots p_k^{b_k}$, where $p_1, p_2, \ldots, p_k$ are distinct prime numbers and $a_1, a_2, \ldots, a_k, b_1, b_2, \ldots, b_k$ are non-negative integers.
+
+The greatest common divisor $d = \gcd(a, b)$ is the product of the common prime factors raised to the smallest power. Therefore, we can write $d = p_1^{\min(a_1, b_1)}p_2^{\min(a_2, b_2)}\ldots p_k^{\min(a_k, b_k)}$.
+
+The least common multiple $m = \lcm(a, b)$ is the product of the prime factors raised to the largest power. Therefore, we can write $m = p_1^{\max(a_1, b_1)}p_2^{\max(a_2, b_2)}\ldots p_k^{\max(a_k, b_k)}$.
+
+Now, let's consider the product $dm$. We have:
+
+\begin{align*}
+dm &= \left(p_1^{\min(a_1, b_1)}p_2^{\min(a_2, b_2)}\ldots p_k^{\min(a_k, b_k)}\right)\left(p_1^{\max(a_1, b_1)}p_2^{\max(a_2, b_2)}\ldots p_k^{\max(a_k, b_k)}\right) \\
+&= p_1^{a_1 + b_1}p_2^{a_2 + b_2}\ldots p_k^{a_k + b_k} \\
+&= p_1^{a_1}p_1^{b_1}p_2^{a_2}p_2^{b_2}\ldots p_k^{a_k}p_k^{b_k} \\
+&= (p_1^{a_1}p_2^{a_2}\ldots p_k^{a_k})(p_1^{b_1}p_2^{b_2}\ldots p_k^{b_k}) \\
+&= ab.
+\end{align*}
+
+Therefore, we have shown that $dm = |ab|$.
 
 \bigskip
 
@@ -76,29 +111,10 @@ If $d= \gcd(a, b)$ and $m = \lcm(a, b)$, prove that $dm = |ab|$.
 \item[{\bf 25.}]
 Show that $\lcm(a,b) = |ab|$ if and only if $\gcd(a,b) = 1$.
 
+\textbf{Answer:} Let's consider the prime factorization of $a$ and $b$. We can write $a = p_1^{a_1}p_2^{a_2}\ldots p_k^{a_k}$ and $b = p_1^{b_1}p_2^{b_2}\ldots p_k^{b_k}$, where $p_1, p_2, \ldots, p_k$ are distinct prime numbers and $a_1, a_2, \ldots, a_k, b_1, b_2, \ldots, b_k$ are non-negative integers.
 
-\bigskip
+The greatest common divisor $\gcd(a, b)$ is the product of the common prime factors raised to the smallest power. Therefore, we can write $\gcd(a, b) = p_1^{\min(a_1, b_1)}p_2^{\min(a_2, b_2)}\ldots p_k^{\min(a_k, b_k)}$.
 
-%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 26.}]
-Prove that $\gcd(a,c) = \gcd(b,c) =1$ if and only if $\gcd(ab,c) = 1$ for integers $a$, $b$, and $c$.
+The least common multiple $\lcm(a, b)$ is the product of the prime factors raised to the largest power. Therefore, we can write $\lcm(a, b) = p_1^{\max(a_1, b_1)}p_2^{\max(a_2, b_2)}\ldots p_k^{\max(a_k, b_k)}$.
 
-N.B. The following problem (Exercise 27) is not required. It is included here for you reference, since it may be useful when solving 26 (depending on the proof strategy you use). You may use the result stated in Exercise 27, even if you have not yet proved it.
-
-
-\bigskip
-
-%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 27.}]
-Let $a, b, c \in {\mathbb Z}$.  Prove that if $\gcd(a,b) = 1$ and $a  \mid bc$, then $a  \mid  c$. 
-
- 
-
-\bigskip
-
-%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 28.}]
-Let $p \geq 2$.  Prove that if $2^p-1$ is prime, then $p$ must also be prime.
-
-\end{enumerate}
-\end{document}
+Now, let's consider the product $|

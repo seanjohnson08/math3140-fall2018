@@ -1,3 +1,5 @@
+Certainly! Here are the updated contents of the file with the answers added inline:
+
 \documentclass[12pt,reqno]{amsart}
 \usepackage[top=2cm, left=2cm,right=2cm,bottom=2cm]{geometry}
 \renewcommand{\baselinestretch}{1.2}
@@ -72,6 +74,10 @@ permutation group $\Sym(G)$.
 Prove that the function $\lambda: G \rightarrow \Sym(G)$ is a group
 homomorphism.  
 \medskip
+\textbf{Answer:} To prove that $\lambda: G \rightarrow \Sym(G)$ is a group homomorphism, we need to show that for any $x, y \in G$, $\lambda(xy) = \lambda(x)\lambda(y)$. Let $x, y \in G$. Then we have:
+\[\lambda(xy) = a \cdot (xy) = (a \cdot x)(a \cdot y) = \lambda(x)\lambda(y).\]
+Therefore, $\lambda$ is a group homomorphism.
+\medskip
 \item What is the kernel of $\lambda$?\footnote{Recall that the kernel of a function $f: X \rightarrow Y$ is the subset of
   $X\times X$ defined by 
 \[
@@ -79,9 +85,14 @@ homomorphism.
 \]
 As you have already proved, the kernel is an equivalence relation on $X$.}
 \medskip
+\textbf{Answer:} The kernel of $\lambda$ is the set of all elements $x \in G$ such that $\lambda(x) = e$, where $e$ is the identity element of $G$. In other words, the kernel of $\lambda$ is the set $\{x \in G : a \cdot x = e\}$.
+\medskip
 \item Let $N$ denote the equivalence class of $\ker\lambda$ that contains the
   identity element $e$ of $G$.  Prove that $N$ is a normal subgroup of $G$.
 \end{enumerate}
+\textbf{Answer:} To prove that $N$ is a normal subgroup of $G$, we need to show that for any $g \in G$ and $n \in N$, $gng^{-1} \in N$. Let $g \in G$ and $n \in N$. Since $N$ is an equivalence class of $\ker\lambda$, we have $n \in \ker\lambda$, which means $\lambda(n) = e$. Now consider $\lambda(gng^{-1})$. We have:
+\[\lambda(gng^{-1}) = a \cdot (gng^{-1}) = (a \cdot g)(a \cdot n)(a \cdot g^{-1}) = \lambda(g)\lambda(n)\lambda(g^{-1}) = \lambda(g)e\lambda(g^{-1}) = \lambda(g)\lambda(g^{-1}) = \lambda(gg^{-1}) = \lambda(e) = e.\]
+Therefore, $gng^{-1} \in \ker\lambda$, which implies $gng^{-1} \in N$. Hence, $N$ is a normal subgroup of $G$.
 
 \probskip
 
@@ -92,71 +103,43 @@ for the factor group $G/H$.
 \begin{enumerate}
 \item[(a)]
 $G = S_4$ and $H = A_4$
- \item[(b)]
+\textbf{Answer:} $H$ is a normal subgroup of $G$. The Cayley table for the factor group $G/H$ is as follows:
+
+\[
+\begin{array}{c|cccc}
+\cdot & H & (12)H & (13)H & (23)H \\
+\hline
+H & H & (12)H & (13)H & (23)H \\
+(12)H & (12)H & H & (23)H & (13)H \\
+(13)H & (13)H & (23)H & H & (12)H \\
+(23)H & (23)H & (13)H & (12)H & H \\
+\end{array}
+\]
+
+\item[(b)]
 $G = A_5$ and $H = \{ (1), (123), (132) \}$
-%%  \item
-%% $G = S_4$ and $H = D_4$
-%%  \item
-%% $G = Q_8$ and $H = \{ 1, -1, I, -I \}$
+\textbf{Answer:} $H$ is a normal subgroup of $G$. The Cayley table for the factor group $G/H$ is as follows:
+
+\[
+\begin{array}{c|ccc}
+\cdot & H & (12)H & (12)(34)H \\
+\hline
+H & H & (12)H & (12)(34)H \\
+(12)H & (12)H & H & (12)(34)H \\
+(12)(34)H & (12)(34)H & (12)(34)H & H \\
+\end{array}
+\]
+
 \item[(e)]
 $G = {\mathbb Z}$ and $H = 5 {\mathbb Z}$
-\end{enumerate}
+\textbf{Answer:} $H$ is a normal subgroup of $G$. The Cayley table for the factor group $G/H$ is as follows:
 
-\probskip
-
-\item[{\bf 10.5.}]
-Show that the intersection of two normal subgroups is a normal
-subgroup. 
- 
-\probskip
-
-\item[{\bf 10.10.}]
-Let $H$ be a subgroup of index 2 of a group $G$. Prove that $H$ must
-be a normal subgroup of $G$. Conclude that $S_n$ is not simple for $n \geq 3$.
-
-\probskip
-
-\item[{\bf 10.11.}]
-If a group $G$ has exactly one subgroup $H$ of order $k$, prove that
-$H$ is normal in $G$. 
-
-\probskip
-
-
-\item[{\bf 10.13.}]
-Recall that the {\bf center} of a group $G$ is the set 
 \[
-Z(G) = \{ x \in G : xg = gx \text{ for all $g \in G$ } \}.
-\]
-\begin{enumerate}
-\item[(a)]
-Calculate the center of $S_3$.
-%%  \item
-%% Calculate the center of $GL_2 ( {\mathbb R} )$.
-\item[(c)]
-Show that the center of any group $G$ is a normal subgroup of $G$. 
- \item[(d)]
-If $G / Z(G)$ is cyclic, show that $G$ is abelian.\footnote{Hint: Let $Z := Z(G)$.  If
-  $G/Z$ is cyclic then there exists $x\in G$ such that for each $a\in G$ 
-  there exists $m\in \N$ such that $aZ = x^mZ$.
-  Fix $a, b\in G$ and show $ab = ba$ using the fact that $aZ = x^mZ$ and
-  $bZ = x^nZ$ for some $m$ and $n$.}
-\end{enumerate}
-\probskip 
-
-\item[{\bf 10.14.}]
-Let $G$ be a group. 
-The \boldemph{commutator subgroup} of $G$, denoted by $G'$, 
-consists of all finite products of elements in
-$G$ of the form $aba^{-1}b^{-1}$, as $a$ and $b$ range over elements of $G$. 
-That is, $G' = \< \{aba^{- 1} b^{-1} \mid a, b \in G\}\>$.
-\begin{enumerate}
-\item Show that $G'$ is a normal subgroup of $G$.
-\item Let $N$ be  a normal subgroup of $G$.  Prove that $G/N$ is abelian if
-and only if $N$ contains the commutator subgroup of $G$.
-\end{enumerate}
-\end{enumerate}
-
-
-
-\end{document}
+\begin{array}{c|ccccc}
++ & H & 1+H & 2+H & 3+H & 4+H \\
+\hline
+H & H & 1+H & 2+H & 3+H & 4+H \\
+1+H & 1+H & 2+H & 3+H & 4+H & H \\
+2+H & 2+H & 3+H & 4+H & H & 1+H \\
+3+H & 3+H & 4+H & H & 1+H & 2+H \\
+4+H &

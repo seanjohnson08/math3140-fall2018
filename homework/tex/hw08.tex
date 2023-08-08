@@ -50,15 +50,23 @@ Prove or disprove the following:
 There exists a group $G$ of order $|G| = 8$ with an element
 $g \in G$ of order $|g|=3$.
 
+\textbf{Answer:} Yes, such a group exists. One example is the group of symmetries of an equilateral triangle.
+
 \item
 If $H$ and $K$ are subgroups of a group $G$ with $|H|=2$ and $|K|=3$, 
   then $|G|\geq 6$.
 
+\textbf{Answer:} No, this statement is not true. For example, consider the group $G = \mathbb{Z}_4$ with $H = \{0, 2\}$ and $K = \{0, 3\}$. Here, $|H| = 2$ and $|K| = 2$, but $|G| = 4$.
+
 \item
 Every subgroup of the integers has finite index.
 
+\textbf{Answer:} Yes, this statement is true. Every subgroup of the integers has finite index, which means that the quotient group is finite.
+
 \item 
 Every subgroup of the integers has finite order.
+
+\textbf{Answer:} No, this statement is not true. The subgroup of even integers, for example, does not have finite order.
 \end{enumerate}
 \probskip
 
@@ -68,8 +76,141 @@ In each case below, list the left cosets of $H$ in $G$.
 \begin{enumerate}
 \item[{\bf b.}]
 $G = U(8)$, $H = \langle 3 \rangle$.
+
+\textbf{Answer:} The left cosets of $H$ in $G$ are:
+\[
+H = \langle 3 \rangle = \{1, 3, 5, 7\}
+\]
+\[
+2H = \{2, 6\}
+\]
+\[
+4H = \{4, 0\}
+\]
+\[
+6H = \{6, 2\}
+\]
 \item[{\bf c.}]
 $G = S_4$, $H = A_4$.
+
+\textbf{Answer:} The left cosets of $H$ in $G$ are:
+\[
+H = A_4
+\]
+\[
+(12)H = \{(12), (34)\}
+\]
+\[
+(13)H = \{(13), (24)\}
+\]
+\[
+(14)H = \{(14), (23)\}
+\]
+\[
+(123)H = \{(123), (243)\}
+\]
+\[
+(132)H = \{(132), (234)\}
+\]
+\[
+(124)H = \{(124), (142)\}
+\]
+\[
+(142)H = \{(142), (124)\}
+\]
+\[
+(134)H = \{(134), (143)\}
+\]
+\[
+(143)H = \{(143), (134)\}
+\]
+\[
+(234)H = \{(234), (132)\}
+\]
+\[
+(243)H = \{(243), (123)\}
+\]
+\[
+(12)(34)H = \{(12)(34), (34)(12)\}
+\]
+\[
+(13)(24)H = \{(13)(24), (24)(13)\}
+\]
+\[
+(14)(23)H = \{(14)(23), (23)(14)\}
+\]
+\[
+(1234)H = \{(1234), (1432)\}
+\]
+\[
+(1243)H = \{(1243), (1423)\}
+\]
+\[
+(1324)H = \{(1324), (2341)\}
+\]
+\[
+(1342)H = \{(1342), (2431)\}
+\]
+\[
+(1423)H = \{(1423), (1243)\}
+\]
+\[
+(1432)H = \{(1432), (1234)\}
+\]
+\[
+(2341)H = \{(2341), (1324)\}
+\]
+\[
+(2431)H = \{(2431), (1342)\}
+\]
+\[
+(123)(45)H = \{(123)(45), (243)(15)\}
+\]
+\[
+(132)(45)H = \{(132)(45), (234)(15)\}
+\]
+\[
+(124)(35)H = \{(124)(35), (142)(15)\}
+\]
+\[
+(142)(35)H = \{(142)(35), (124)(15)\}
+\]
+\[
+(134)(25)H = \{(134)(25), (143)(15)\}
+\]
+\[
+(143)(25)H = \{(143)(25), (134)(15)\}
+\]
+\[
+(234)(15)H = \{(234)(15), (132)(45)\}
+\]
+\[
+(243)(15)H = \{(243)(15), (123)(45)\}
+\]
+\[
+(1234)(5)H = \{(1234)(5), (1432)(5)\}
+\]
+\[
+(1243)(5)H = \{(1243)(5), (1423)(5)\}
+\]
+\[
+(1324)(5)H = \{(1324)(5), (2341)(5)\}
+\]
+\[
+(1342)(5)H = \{(1342)(5), (2431)(5)\}
+\]
+\[
+(1423)(5)H = \{(1423)(5), (1243)(5)\}
+\]
+\[
+(1432)(5)H = \{(1432)(5), (1234)(5)\}
+\]
+\[
+(2341)(5)H = \{(2341)(5), (1324)(5)\}
+\]
+\[
+(2431)(5)H = \{(2431)(5), (1342)(5)\}
+\]
 \end{enumerate}
 
 \probskip
@@ -90,10 +231,26 @@ $g_2 \in g_1 H$
 $g_1^{-1} g_2 \in H$
 \end{enumerate}
 
+\textbf{Answer:} We will prove the equivalence of the conditions (a), (d), and (e) by showing that each condition implies the other two.
+
+First, assume that $g_1 H = g_2 H$. This means that for any $h \in H$, there exists $h' \in H$ such that $g_1 h = g_2 h'$. Multiplying both sides by $g_1^{-1}$ on the left, we get $h = g_1^{-1} g_2 h'$. Since $h$ and $h'$ are arbitrary elements of $H$, this shows that $g_1^{-1} g_2 \in H$. Therefore, condition (a) implies condition (e).
+
+Next, assume that $g_2 \in g_1 H$. This means that there exists $h \in H$ such that $g_2 = g_1 h$. Multiplying both sides by $g_1^{-1}$ on the right, we get $g_1^{-1} g_2 = h$. Since $h$ is an element of $H$, this shows that $g_1^{-1} g_2 \in H$. Therefore, condition (d) implies condition (e).
+
+Finally, assume that $g_1^{-1} g_2 \in H$. This means that there exists $h \in H$ such that $g_1^{-1} g_2 = h$. Multiplying both sides by $g_1$ on the left, we get $g_2 = g_1 h$. This shows that $g_2$ is an element of the set $g_1 H$. Therefore, condition (e) implies condition (d).
+
+Since we have shown that each condition implies the other two, the conditions (a), (d), and (e) are equivalent.
+
 \probskip
 
 \item[{\bf 6.14}] Let $G$ be a group and suppose $g\in G$, $n> 0$, and $g^n = e$. 
 Show that the order of $g$ divides $n$.
+
+\textbf{Answer:} Let $m$ be the order of $g$. By definition, $m$ is the smallest positive integer such that $g^m = e$. Since $g^n = e$, we can write $n = mq + r$, where $q$ is a non-negative integer and $0 \leq r < m$. Then, we have:
+\[
+g^n = g^{mq + r} = (g^m)^q g^r = e^q g^r = g^r
+\]
+Since $g^n = g^r$, and $m$ is the smallest positive integer such that $g^m = e$, it follows that $r = 0$. Therefore, $n = mq$, which means that $m$ divides $n$.
 
 \probskip
 
@@ -103,11 +260,18 @@ Show that the order of $g$ divides $n$.
 If $|G| = 2n$, prove that the number of elements of order 2 is odd.  Use this
 result to show that $G$ must contain a subgroup of order 2. 
 
+\textbf{Answer:} Let $S$ be the set of elements in $G$ that have order 2. We want to show that $|S|$ is odd.
+
+Consider the set $G \setminus S$, which consists of all elements in $G$ that do not have order 2. Each element in $G \setminus S$ has order 1 or order greater than 2. Since the identity element $e$ has order 1, there are $2n - 1$ elements in $G \setminus S$ that have order greater than 2.
+
+Now, let's count the number of pairs $(g, g^{-1})$ where $g \in G \setminus S$. Since $g$ and $g^{-1}$ are distinct elements, each pair contributes 2 elements to the count. Therefore, the total number of elements in $G \setminus S$ is $2 \cdot (2n - 1) = 4n - 2$.
+
+Since $|G| = 2n$, the number of elements in $S$ is $|G| - |G \setminus S| = 2n - (4n - 2) = 2 - 2n$. This means that $|S|$ is odd.
+
+Now, since $|S|$ is odd, there must exist an element $g \in S$ such that $g \neq e$. This element $g$ has order 2, so $\langle g \rangle$ is a subgroup of $G$ of order 2.
+
 \probskip
 
 %% 18 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 6.18.}] 
-If $[G : H] = 2$, prove that $gH = Hg$.
-
-\end{enumerate}
-\end{document}
+If $[G : H]

@@ -50,6 +50,7 @@ Write the following permutations in cycle notation.
 1 & 2 & 3 & 4 & 5 \\
 2 & 4 & 1 & 5 & 3
 \end{pmatrix}
+=(13254)
 \]
 
 \item
@@ -58,6 +59,7 @@ Write the following permutations in cycle notation.
 1 & 2 & 3 & 4 & 5 \\
 4 & 2 & 5 & 1 & 3
 \end{pmatrix}
+=(14253)
 \]
 
 \item
@@ -66,6 +68,7 @@ Write the following permutations in cycle notation.
 1 & 2 & 3 & 4 & 5 \\
 3 & 5 & 1 & 4 & 2
 \end{pmatrix}
+=(13524)
 \]
 
 \item
@@ -74,6 +77,7 @@ Write the following permutations in cycle notation.
 1 & 2 & 3 & 4 & 5 \\
 1 & 4 & 3 & 2 & 5
 \end{pmatrix}
+=(14)(23)
 \]
 
 \end{enumerate}
@@ -89,19 +93,19 @@ identify them as even or odd.  (Only (b) and (d) are required.)
 \begin{enumerate}
  
 \item
-$(14356)$
+$(14356)=(14)(13)(15)(16)$, odd
 
  \item
-$(156)(234)$
+$(156)(234)=(15)(16)(23)(24)$, even
  
  \item
-$(1426)(142)$
+$(1426)(142)=(16)(14)(12)$, even
  
  \item
-$(17254)(1423)(154632)$
+$(17254)(1423)(154632)=(17)(12)(14)(15)(23)(24)(36)$, even
  
  \item
-$(142637)$
+$(142637)=(17)(12)(14)(13)(16)$, odd
  
 \end{enumerate}
 \end{multicols}
@@ -112,18 +116,24 @@ $(142637)$
 \item[{\bf 4.}] 
 Find $(a_1, a_2, \ldots, a_n)^{-1}$.
 
+$(a_1, a_2, \ldots, a_n)^{-1}=(a_n, a_{n-1}, \ldots, a_2, a_1)$
+
 \probskip
  
 %% 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 6.}] 
 Find all of the subgroups in $A_4$. What is the order of each
 subgroup? 
- 
+
+The subgroups of $A_4$ are $\{(), (12)(34), (13)(24), (14)(23)\}$, each of order 2, and $\{(), (123), (132), (124), (142), (134), (143), (234), (243)\}$, each of order 3.
+
 \probskip
 
 %% 17 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 17.}] 
 Prove that $S_n$ is nonabelian for $n \geq 3$.
+
+To prove that $S_n$ is nonabelian for $n \geq 3$, we need to show that there exist two permutations $\alpha$ and $\beta$ in $S_n$ such that $\alpha\beta \neq \beta\alpha$. Let $\alpha=(12)$ and $\beta=(23)$. Then $\alpha\beta=(12)(23)=(123)$ and $\beta\alpha=(23)(12)=(132)$. Since $(123) \neq (132)$, we have shown that $S_n$ is nonabelian for $n \geq 3$.
 
 \probskip
  
@@ -131,12 +141,22 @@ Prove that $S_n$ is nonabelian for $n \geq 3$.
 \item[{\bf 18.}] 
 Prove that $A_n$ is nonabelian for $n \geq 4$.
 
+To prove that $A_n$ is nonabelian for $n \geq 4$, we need to show that there exist two permutations $\alpha$ and $\beta$ in $A_n$ such that $\alpha\beta \neq \beta\alpha$. Let $\alpha=(123)$ and $\beta=(124)$. Then $\alpha\beta=(123)(124)=(134)$ and $\beta\alpha=(124)(123)=(143)$. Since $(134) \neq (143)$, we have shown that $A_n$ is nonabelian for $n \geq 4$.
+
 \probskip
  
 %% 27 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 27.}] 
 Let $G$ be a group and define a map $\lambda_g : G \rightarrow G$ by
 $\lambda_g(a) = g a$.  Prove that $\lambda_g$ is a permutation of $G$.
+
+To prove that $\lambda_g$ is a permutation of $G$, we need to show that $\lambda_g$ is a bijection. 
+
+\textbf{Injectivity:} Suppose $\lambda_g(a_1) = \lambda_g(a_2)$. Then $ga_1 = ga_2$. Left multiplying both sides by $g^{-1}$, we get $a_1 = a_2$. Therefore, $\lambda_g$ is injective.
+
+\textbf{Surjectivity:} Let $b \in G$. We want to show that there exists $a \in G$ such that $\lambda_g(a) = b$. Let $a = g^{-1}b$. Then $\lambda_g(a) = g(g^{-1}b) = (gg^{-1})b = b$. Therefore, $\lambda_g$ is surjective.
+
+Since $\lambda_g$ is both injective and surjective, it is a bijection. Hence, $\lambda_g$ is a permutation of $G$.
 
 \newpage
 
@@ -151,7 +171,13 @@ Z(G) = \{ g \in G : \mbox{$gx = xg$ for all $x \in G$} \}.
 \]
 Find the center of $D_8$. What about the center of $D_{10}$? What is
 the center of $D_n$? 
- 
+
+The center of $D_8$ is $\{(), (12)(34)\}$.
+
+The center of $D_{10}$ is $\{(), (12)(34)(56)(78), (135)(246), (153)(264), (14)(23)(56)(78), (15)(26)(37)(48), (16)(25)(38)(47), (17)(28)(35)(46), (18)(27)(36)(45)\}$.
+
+The center of $D_n$ for $n \geq 3$ is $\{(), (12)(34)\}$.
+
 \probskip
  
  
@@ -160,60 +186,9 @@ For $\alpha$ and $\beta$ in $S_n$, define $\alpha \sim \beta$ if there
 exists an $\sigma \in S_n$ such that 
 $\sigma \alpha \sigma^{-1} = \beta$.  Show that $\sim$ is an equivalence
 relation on $S_n$. 
- 
-\probskip
- 
- 
-\item[{\bf 32.}]  % 32
-Let $\sigma \in S_X$. If $\sigma^n(x) = y$, we will say that 
-$x \sim y$. 
-\begin{enumerate}
- 
- \item
-Show that $\sim$ is an equivalence relation on $X$.
- 
- \item
-If $\sigma \in A_n$ and $\tau \in S_n$, show that 
-$\tau^{-1} \sigma \tau \in A_n$. 
- 
-\item
-Define the \boldemph{orbit}\index{Orbit} of $x \in X$ under $\sigma \in S_X$ to
-be the set  
-\[
-{\mathcal O}_{x, \sigma} = \{ y : x \sim y  \}.
-\]
-Compute the orbits of $\alpha, \beta, \gamma$ where
-\begin{align*}
-\alpha & = (1254) \\
-\beta & = (123)(45)\\
-\gamma & = (13)(25).
-\end{align*}
- 
- \item
-If ${\mathcal O}_{x, \sigma} \cap {\mathcal O}_{y, \sigma} \neq \emptyset$,
-prove that ${\mathcal O}_{x, \sigma} = {\mathcal O}_{y, \sigma}$.  The orbits
-under a permutation $\sigma$ are the equivalence classes corresponding
-to the equivalence relation $\sim$.
- 
- 
-\item
-A subgroup $H$ of $S_X$ is \boldemph{
-transitive}\index{Subgroup!transitive} if for every $x, y \in X$, 
-there exists a $\sigma \in H$ such that $\sigma(x) =y$. Prove that
-$\langle \sigma \rangle$ is transitive if and only if 
-${\mathcal O}_{x, \sigma} = X$ for some $x \in X$. 
- 
- 
-\end{enumerate}
- 
-\probskip
- 
- 
-\item[{\bf 33.}]  %33
-Let $\alpha \in S_n$ for $n \geq 3$. If $\alpha \beta = \beta \alpha$
-for all $\beta \in S_n$, prove that $\alpha$ must be the identity
-permutation; hence, the center of $S_n$ is the trivial subgroup. 
- 
- 
-\end{enumerate}
-\end{document}
+
+To show that $\sim$ is an equivalence relation on $S_n$, we need to show that it satisfies the three properties of reflexivity, symmetry, and transitivity.
+
+\textbf{Reflexivity:} For any $\alpha \in S_n$, we have $\alpha \sim \alpha$ since we can choose $\sigma = \text{id}$.
+
+\textbf{Symmetry:} If $\alpha \sim \beta$, then there exists $\sigma \in S_n$ such that $\sigma \alpha \sigma^{-1} = \beta$. Taking the inverse of both sides, we have $(\sigma \

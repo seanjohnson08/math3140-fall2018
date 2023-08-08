@@ -1,3 +1,5 @@
+Certainly! Here's the updated file with answers added inline:
+
 \documentclass[12pt,reqno]{amsart}
 \usepackage[top=1.5cm, left=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
 \renewcommand{\baselinestretch}{1.2}
@@ -45,20 +47,32 @@ Find all $x \in {\mathbb Z}$ satisfying each of the following equations.
 \item 
 $3x \equiv 2 \pmod{ 7}$
 
+\textbf{Answer:} $x \equiv 5 \pmod{7}$
+
 \item
 $5x + 1 \equiv 13 \pmod{ 23}$
+
+\textbf{Answer:} $x \equiv 4 \pmod{23}$
 
 \item
 $5x + 1 \equiv 13 \pmod{ 26}$
 
+\textbf{Answer:} $x \equiv 12 \pmod{26}$
+
 \item
 $9x \equiv 3 \pmod{ 5}$
+
+\textbf{Answer:} $x \equiv 2 \pmod{5}$
 
 \item
 $5x \equiv 1 \pmod{ 6}$
 
+\textbf{Answer:} $x \equiv 5 \pmod{6}$
+
 \item
 $3x \equiv 1 \pmod{ 6}$
+
+\textbf{Answer:} $x \equiv 5 \pmod{6}$
 
 \end{enumerate}
 \end{multicols}
@@ -83,6 +97,8 @@ d & d & a & b & c
 \end{array}
 \]
 
+\textbf{Answer:} This table does not form a group because the operation is not associative. For example, $(a \circ b) \circ c = c \circ c = a$, but $a \circ (b \circ c) = a \circ d = b$.
+
 \item
 \[
 \begin{array}{c|cccc}
@@ -95,6 +111,8 @@ d & d & c & b & a
 \end{array}
 \]
  
+\textbf{Answer:} This table forms a group because it satisfies the group axioms. It is associative, every element has an inverse, and it has an identity element.
+
 \item
 \[
 \begin{array}{c|cccc}
@@ -107,6 +125,8 @@ d & d & a & b & c
 \end{array}
 \]
 
+\textbf{Answer:} This table does not form a group because the operation is not associative. For example, $(a \circ b) \circ c = c \circ c = a$, but $a \circ (b \circ c) = a \circ d = b$.
+
 \item
 \[
 \begin{array}{c|cccc}
@@ -118,6 +138,8 @@ c & c & b & a & d \\
 d & d & d & b & c
 \end{array}
 \]
+ 
+\textbf{Answer:} This table does not form a group because not every element has an inverse. For example, there is no element $x$ such that $a \circ x = d$.
 
 \end{enumerate}
 \end{multicols}
@@ -129,8 +151,35 @@ d & d & d & b & c
 Write out Cayley tables for groups formed by the symmetries of a
 rectangle and for $({\mathbb Z}_4, +)$. How many elements are in each
 group? Are the groups the same? Why or why not? 
- 
- 
+
+\textbf{Answer:} The Cayley table for the symmetries of a rectangle is as follows:
+
+\[
+\begin{array}{c|cccc}
+\circ & e & r & h & v \\
+\hline
+e & e & r & h & v \\
+r & r & e & v & h \\
+h & h & v & e & r \\
+v & v & h & r & e
+\end{array}
+\]
+
+The Cayley table for $({\mathbb Z}_4, +)$ is as follows:
+
+\[
+\begin{array}{c|cccc}
++ & 0 & 1 & 2 & 3 \\
+\hline
+0 & 0 & 1 & 2 & 3 \\
+1 & 1 & 2 & 3 & 0 \\
+2 & 2 & 3 & 0 & 1 \\
+3 & 3 & 0 & 1 & 2
+\end{array}
+\]
+
+Both groups have 4 elements. However, the groups are not the same because the operation in each group is different. The group of symmetries of a rectangle is formed by composition of symmetries, while $({\mathbb Z}_4, +)$ is formed by addition modulo 4.
+
 \medskip
 
 %% 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,7 +189,43 @@ symmetries is a group. Give a Cayley table for the symmetries. How
 many ways can the vertices of a square be permuted?  Is each
 permutation necessarily a symmetry of the square?  The symmetry group
 of the square is denoted by $D_4$.
- 
+
+\textbf{Answer:} The symmetries of a square are as follows:
+\begin{itemize}
+    \item The identity symmetry $e$ (no rotation or reflection).
+    \item Rotations: $r$, $r^2$, $r^3$ (by 90, 180, and 270 degrees counterclockwise, respectively).
+    \item Reflections: $h$ (horizontal reflection) and $v$ (vertical reflection).
+    \item Diagonal reflections: $d_1$ (reflection across the main diagonal) and $d_2$ (reflection across the other diagonal).
+\end{itemize}
+
+To prove that the set of symmetries is a group, we need to show that it satisfies the group axioms. 
+
+\begin{itemize}
+    \item Closure: The composition of any two symmetries of a square is also a symmetry of a square.
+    \item Associativity: The composition of symmetries is associative.
+    \item Identity: The identity symmetry $e$ is the identity element.
+    \item Inverses: Every symmetry has an inverse symmetry.
+\end{itemize}
+
+The Cayley table for the symmetries of a square is as follows:
+
+\[
+\begin{array}{c|cccccccc}
+\circ & e & r & r^2 & r^3 & h & v & d_1 & d_2 \\
+\hline
+e & e & r & r^2 & r^3 & h & v & d_1 & d_2 \\
+r & r & r^2 & r^3 & e & d_2 & d_1 & v & h \\
+r^2 & r^2 & r^3 & e & r & v & h & d_2 & d_1 \\
+r^3 & r^3 & e & r & r^2 & d_1 & d_2 & h & v \\
+h & h & d_1 & v & d_2 & e & r^2 & r^3 & r \\
+v & v & d_2 & h & d_1 & r^2 & e & r & r^3 \\
+d_1 & d_1 & v & d_2 & h & r^3 & r & e & r^2 \\
+d_2 & d_2 & h & d_1 & v & r & r^3 & r^2 & e \\
+\end{array}
+\]
+
+There are $4! = 24$ ways to permute the vertices of a square. However, not every permutation is necessarily a symmetry of the square. Only the permutations that can be achieved by rotations and reflections are symmetries of the square.
+
 \medskip
 
 %% 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,24 +233,11 @@ of the square is denoted by $D_4$.
 Let $S = {\mathbb R} \setminus \{ -1 \}$ and define a binary operation on
 $S$ by $a \ast b = a + b +ab$. Prove that $(S, \ast)$ is an abelian
 group.
- 
 
-\medskip
+\textbf{Answer:} To prove that $(S, \ast)$ is an abelian group, we need to show that it satisfies the group axioms.
 
-%% 12 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 12.}]
-Let ${\mathbb Z}_2^n = \{ (a_1, a_2, \ldots, a_n) : a_i \in {\mathbb Z}_2
-\}$. Define a binary operation on ${\mathbb Z}_2^n$ by
-\[
-(a_1, a_2, \ldots, a_n)
-+
-(b_1, b_2, \ldots, b_n)
-=
-(a_1+b_1, a_2+b_2, \ldots, a_n+b_n).
-\]
-Prove that ${\mathbb Z}_2^n$ is a group under this operation. This group
-is important in algebraic coding theory. 
- 
-
-\end{enumerate}
-\end{document}
+\begin{itemize}
+    \item Closure: For any $a, b \in S$, $a \ast b = a + b + ab$ is also in $S$ because the sum and product of real numbers is always a real number.
+    \item Associativity: The operation $\ast$ is associative because $(a \ast b) \ast c = a + b + ab + c + (a + b + ab)c = a + b + c + ab + ac + bc + abc = a + (b + c + bc) + (a + (b + c + bc))bc = a \ast (b \ast c)$.
+    \item Identity: The identity element is 0 because $a \ast 0 = a + 0 + a \cdot 0 = a$ for any $a \in S$.
+    \item Invers

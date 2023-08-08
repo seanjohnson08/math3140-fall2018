@@ -1,3 +1,6 @@
+Certainly! Here's the updated file with answers added inline:
+
+```tex
 % Example LaTeX document for GP111 - note % sign indicates a comment
 \documentclass[12pt,reqno]{amsart}
 \usepackage[top=1.5cm, left=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
@@ -46,16 +49,16 @@ Describe each of the following sets.
 \begin{enumerate}
 
 \item
-$A \cap B$
+$A \cap B$ \textbf{Answer:} The set of natural numbers that are both even and prime.
 
 \item
-$B \cap C$
+$B \cap C$ \textbf{Answer:} The set of natural numbers that are both prime and multiples of 5.
 
 \item
-$A \cup B$
+$A \cup B$ \textbf{Answer:} The set of natural numbers that are either even or prime.
 
 \item
-$A \cap (B \cup C)$
+$A \cap (B \cup C)$ \textbf{Answer:} The set of natural numbers that are even and either prime or multiples of 5.
 
 \end{enumerate}
 \end{multicols}
@@ -70,16 +73,16 @@ $D = \emptyset$, list all of the elements in each of the following sets.
 \begin{enumerate}
 
 \item
-$A \times B$
+$A \times B$ \textbf{Answer:} $\{(a,1), (a,2), (a,3), (b,1), (b,2), (b,3), (c,1), (c,2), (c,3)\}$
 
 \item
-$B \times A$
+$B \times A$ \textbf{Answer:} $\{(1,a), (1,b), (1,c), (2,a), (2,b), (2,c), (3,a), (3,b), (3,c)\}$
 
 \item
-$A \times B \times C$
+$A \times B \times C$ \textbf{Answer:} $\{(a,1,x), (a,2,x), (a,3,x), (b,1,x), (b,2,x), (b,3,x), (c,1,x), (c,2,x), (c,3,x)\}$
 
 \item
-$A \times D$
+$A \times D$ \textbf{Answer:} $\emptyset$
 
 \end{enumerate}
 \end{multicols}
@@ -88,14 +91,20 @@ $A \times D$
 
 %% 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 3.}]
-Find an example of two nonempty sets $A$ and $B$ for which $A \times B = B \times A$.
+Find an example of two nonempty sets $A$ and $B$ for which $A \times B = B \times A$. \textbf{Answer:} Let $A = \{1\}$ and $B = \{2\}$.
 
 \medskip
 
  
 %% 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 7.}]
-Prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+Prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$. \textbf{Answer:} To prove this, we need to show that every element in $A \cap (B \cup C)$ is also in $(A \cap B) \cup (A \cap C)$, and vice versa.
+
+Let $x$ be an arbitrary element in $A \cap (B \cup C)$. This means that $x$ is in both $A$ and $B \cup C$. Since $x$ is in $B \cup C$, it must be either in $B$ or in $C$. In either case, $x$ is in $A \cap B$ or $x$ is in $A \cap C$. Therefore, $x$ is in $(A \cap B) \cup (A \cap C)$.
+
+Now, let $y$ be an arbitrary element in $(A \cap B) \cup (A \cap C)$. This means that $y$ is either in $A \cap B$ or in $A \cap C$. In either case, $y$ is in $A$. Since $y$ is in $A$ and $y$ is either in $B$ or in $C$, $y$ is in $A \cap (B \cup C)$. Therefore, $y$ is in $A \cap (B \cup C)$.
+
+Since every element in $A \cap (B \cup C)$ is also in $(A \cap B) \cup (A \cap C)$, and vice versa, we can conclude that $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
 
 \medskip
 
@@ -104,11 +113,11 @@ Prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
 \begin{enumerate}
   
 \item
-Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is one-to-one but not onto. 
- 
+Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is one-to-one but not onto. \textbf{Answer:} $f(x) = 2x$
+
 \item
-Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is onto but not one-to-one. 
- 
+Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is onto but not one-to-one. \textbf{Answer:} $f(x) = \lceil \frac{x}{2} \rceil$
+
 \end{enumerate}
 
 \medskip
@@ -120,81 +129,19 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$ be maps.
  
 \item
 If $f$ and $g$ are both one-to-one functions, show that $g \circ f$
-is one-to-one. 
- 
-\item
-If $g \circ f$ is onto, show that $g$ is onto.
- 
-\item
-If $g \circ f$ is one-to-one, show that $f$ is one-to-one.
- 
-\item
-If $g \circ f$ is one-to-one and $f$ is onto, show that $g$ is
-one-to-one.
- 
-\item
-If $g \circ f$ is onto and $g$ is one-to-one, show that $f$ is onto.
- 
-\end{enumerate}
+is one-to-one. \textbf{Answer:} To prove that $g \circ f$ is one-to-one, we need to show that for any $x_1, x_2 \in A$, if $g(f(x_1)) = g(f(x_2))$, then $x_1 = x_2$.
 
-\medskip
+Since $f$ is one-to-one, $f(x_1) = f(x_2)$ implies $x_1 = x_2$. Similarly, since $g$ is one-to-one, $g(f(x_1)) = g(f(x_2))$ implies $f(x_1) = f(x_2)$. Therefore, $g(f(x_1)) = g(f(x_2))$ implies $x_1 = x_2$, which means that $g \circ f$ is one-to-one.
 
-%% 24 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 24.}]
-Let $f: X \rightarrow Y$ be a map with $A_1, A_2 \subset X$ and $B_1, B_2 \subset Y$. 
-\begin{enumerate}
- 
 \item
-Prove $f( A_1 \cup A_2 ) = f( A_1) \cup f( A_2 )$.
- 
-\item
-Prove $f( A_1 \cap A_2 ) \subset f( A_1) \cap f( A_2 )$.  Give an example in which equality fails.
- 
-\item
-Prove $f^{-1}( B_1 \cup B_2 ) = f^{-1}( B_1) \cup f^{-1}(B_2 )$, where
-\[
-f^{-1}(B) = \{ x \in X : f(x) \in B \}.
-\]
- 
-\item
-Prove $f^{-1}( B_1 \cap B_2 ) = f^{-1}( B_1) \cap f^{-1}( B_2 )$. 
- 
-\item
-Prove $f^{-1}( Y \setminus B_1 ) = X \setminus f^{-1}( B_1)$.
- 
-\end{enumerate}
+If $g \circ f$ is onto, show that $g$ is onto. \textbf{Answer:} To prove that $g$ is onto, we need to show that for any $y \in C$, there exists an $x \in A$ such that $g(x) = y$.
 
-\medskip
+Since $g \circ f$ is onto, for any $y \in C$, there exists an $x \in A$ such that $(g \circ f)(x) = y$. Since $(g \circ f)(x) = g(f(x))$, we have $g(f(x)) = y$. Therefore, for any $y \in C$, there exists an $x \in A$ such that $g(x) = y$, which means that $g$ is onto.
 
-%% 25 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 25.}]
-Determine whether or not the following relations are equivalence relations on the given set.  If the relation is an equivalence relation, describe the partition given by it.  If the relation is not an equivalence relation, state why it fails to be one.
-\begin{multicols}{2}
-\begin{enumerate}
- 
 \item
-$x \sim y$ in ${\mathbb R}$ if $x \geq y$
- 
-\item
-$m \sim n$ in ${\mathbb Z}$ if $mn > 0$
- 
-\item
-$x \sim y$ in ${\mathbb R}$ if $|x - y| \leq 4$
- 
-\item
-$m \sim n$ in ${\mathbb Z}$ if $m \equiv n \pmod{6}$
- 
-\end{enumerate}
-\end{multicols}
- 
-\medskip
+If $g \circ f$ is one-to-one, show that $f$ is one-to-one. \textbf{Answer:} To prove that $f$ is one-to-one, we need to show that for any $x_1, x_2 \in A$, if $f(x_1) = f(x_2)$, then $x_1 = x_2$.
 
- 
-\item[{\bf 28.}]
-Find the error in the following argument by providing a counterexample. ``The
-reflexive property is redundant in the axioms for an equivalence relation.  If
-$x \sim y$, then $y \sim x$ by the symmetric property.  Using the transitive
-property, we can deduce that $x \sim x$.''
- 
-\end{enumerate}
-\end{document}
+Since $g \circ f$ is one-to-one, $g(f(x_1)) = g(f(x_2))$ implies $x_1 = x_2$. Therefore, if $f(x_1) = f(x_2)$, then $x_1 = x_2$, which means that $f$ is one-to-one.
+
+\item
+If $g \circ f$ is one-to-one and $f$ is onto, show that $g$ is one-to-one. \textbf{Answer:} To prove that $g$ is one-to-one, we need to show that for any $y_1, y_2 \in B$, if $g(y_1) = g(y_2)$, then $y_1 = y_2$
