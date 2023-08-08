@@ -1,162 +1,59 @@
-\documentclass[12pt,reqno]{amsart}
-\usepackage[top=2cm, left=2cm,right=2cm,bottom=2cm]{geometry}
-\renewcommand{\baselinestretch}{1.2}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{scalefnt}
-\usepackage{tikz}
-\usepackage{color,hyperref,enumerate,multicol}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
-\hypersetup{colorlinks,breaklinks,
-            linkcolor=darkblue,urlcolor=darkblue,
-            anchorcolor=darkblue,citecolor=darkblue}
-            
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\pagestyle{empty}
-\newcommand{\N}{\ensuremath{\mathbb{N}}}
-\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
-\newcommand{\R}{\ensuremath{\mathbb{R}}}
-\newcommand{\bL}{\ensuremath{\mathbf{L}}}
-\newcommand{\bP}{\ensuremath{\mathbf{P}}}
-\newcommand{\bQ}{\ensuremath{\mathbf{Q}}}
-\newcommand{\bA}{\ensuremath{\mathbf{A}}}
-\newcommand{\bB}{\ensuremath{\mathbf{B}}}
-\newcommand{\bG}{\ensuremath{\mathbf{G}}}
-\newcommand{\bH}{\ensuremath{\mathbf{H}}}
-\newcommand{\invG}{\ensuremath{\operatorname{inv}^{\bG}}}
-\newcommand{\invH}{\ensuremath{\operatorname{inv}^{\bH}}}
-\newcommand{\meet}{\ensuremath{\wedge}}
-\newcommand{\Meet}{\ensuremath{\bigwedge}}
-\newcommand{\<}{\ensuremath{\langle}}
-\renewcommand{\>}{\ensuremath{\rangle}}
-\newcommand{\join}{\ensuremath{\vee}}
-\renewcommand{\emptyset}{\ensuremath{\varnothing}}
-\renewcommand{\subset}{\ensuremath{\subsetneq}}
-\newcommand{\boldemph}{\emph}
-\newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
-\newcommand{\Sym}{\ensuremath{\operatorname{Sym}}}
-%\newcommand{\bG}{\ensuremath{\mathbf{G}}}
+Certainly! Here are the answers to the homework questions:
 
-\newcommand{\probskip}{\vskip5mm}
-\usepackage{xspace}
-\newcommand{\subject}{MATH\xspace}
-\newcommand{\coursenumber}{3140\xspace}
-\newcommand{\semester}{Fall 2018\xspace}
+1. (a) To prove that the function $\lambda: G \rightarrow \Sym(G)$ is a group homomorphism, we need to show that for any $g_1, g_2 \in G$, $\lambda(g_1 \cdot g_2) = \lambda(g_1) \circ \lambda(g_2)$, where $\circ$ denotes function composition in $\Sym(G)$.
 
-\begin{document}
-\thispagestyle{empty}
+Let $g_1, g_2 \in G$. Then, $\lambda(g_1 \cdot g_2) = (g_1 \cdot g_2) \cdot g = g_1 \cdot (g_2 \cdot g) = \lambda(g_1) \circ \lambda(g_2)$, where the first equality follows from the definition of $\lambda$, the second equality follows from the associativity of the group operation, and the third equality follows from the definition of $\lambda$.
 
-\noindent \textbf{\subject \coursenumber Homework 10}
+Therefore, $\lambda$ is a group homomorphism.
 
-\smallskip
+(b) The kernel of $\lambda$ is the set of elements $g \in G$ such that $\lambda(g) = \lambda(e)$, where $e$ is the identity element of $G$. In other words, the kernel of $\lambda$ is the set of elements $g \in G$ such that $g \cdot a = a$ for all $a \in G$.
 
-\noindent {\bf Exercises.} 1 below plus Judson Ch 10. 1abe, 5, 10, 11, 13acd, 14.\\
-{\bf Due date:} Friday, 11/09
+Since $e \cdot a = a$ for all $a \in G$, we have $e \in \ker \lambda$. Conversely, if $g \in \ker \lambda$, then $g \cdot a = a$ for all $a \in G$. Setting $a = e$, we get $g \cdot e = e$, which implies $g = e$. Therefore, $\ker \lambda = \{e\}$.
 
+(c) Let $N$ denote the equivalence class of $\ker \lambda$ that contains the identity element $e$ of $G$. To prove that $N$ is a normal subgroup of $G$, we need to show that for any $g \in G$ and $n \in N$, $g \cdot n \cdot g^{-1} \in N$.
 
-\medskip
+Let $g \in G$ and $n \in N$. Since $n \in N$, we have $n \cdot a = a$ for all $a \in G$. Now, consider $g \cdot n \cdot g^{-1} \cdot a$. We can rewrite this expression as $(g \cdot n \cdot g^{-1}) \cdot (g \cdot a)$. Since $n \cdot a = a$ for all $a \in G$, we have $(g \cdot n \cdot g^{-1}) \cdot (g \cdot a) = g \cdot (n \cdot a) = g \cdot a$. Therefore, $g \cdot n \cdot g^{-1} \in N$.
 
-\begin{enumerate}
-\item[{\bf 1.}] Let $\bG = \<G, \cdot, ^{-1}, e\>$ be a finite group of order $n$.  
-Take the set $G$ (the elements of $\bG$) and consider the group of all
-permutations of these elements.  This group is sometimes denoted by $\Sym(G)$;
-note that it is isomorphic to the symmetric group $S_n$ of permutations of
-an $n$-element set.
-Now fix an element $a\in G$ and recall that the function
-$\lambda_a: G \rightarrow G$, defined by $\lambda_a(g) = a\cdot g$, is a
-permutation of the set $G$.  That is, $\lambda_a$ belongs to the
-permutation group $\Sym(G)$.
-\begin{enumerate}[(a)]
-\item 
-Prove that the function $\lambda: G \rightarrow \Sym(G)$ is a group
-homomorphism.  
-\medskip
-\item What is the kernel of $\lambda$?\footnote{Recall that the kernel of a function $f: X \rightarrow Y$ is the subset of
-  $X\times X$ defined by 
-\[
-\ker f = \{(x_1,x_2) : f(x_1) = f(x_2)\}.
-\]
-As you have already proved, the kernel is an equivalence relation on $X$.}
-\medskip
-\item Let $N$ denote the equivalence class of $\ker\lambda$ that contains the
-  identity element $e$ of $G$.  Prove that $N$ is a normal subgroup of $G$.
-\end{enumerate}
+Hence, $N$ is a normal subgroup of $G$.
 
-\probskip
+10.1:
+(a) $H = A_4$ is a normal subgroup of $G = S_4$. The factor group $G/H$ is isomorphic to the cyclic group of order 2.
 
-%% 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 10.1}] For each of the following groups $G$, determine whether $H$ is a normal
-subgroup of $G$. If $H$ is a normal subgroup, write out a Cayley table
-for the factor group $G/H$.
-\begin{enumerate}
-\item[(a)]
-$G = S_4$ and $H = A_4$
- \item[(b)]
-$G = A_5$ and $H = \{ (1), (123), (132) \}$
-%%  \item
-%% $G = S_4$ and $H = D_4$
-%%  \item
-%% $G = Q_8$ and $H = \{ 1, -1, I, -I \}$
-\item[(e)]
-$G = {\mathbb Z}$ and $H = 5 {\mathbb Z}$
-\end{enumerate}
+(b) $H = \{(1), (123), (132)\}$ is not a normal subgroup of $G = A_5$.
 
-\probskip
+(e) $H = 5\mathbb{Z}$ is a normal subgroup of $G = \mathbb{Z}$. The factor group $G/H$ is isomorphic to the cyclic group of order 5.
 
-\item[{\bf 10.5.}]
-Show that the intersection of two normal subgroups is a normal
-subgroup. 
- 
-\probskip
+10.5: The intersection of two normal subgroups is a normal subgroup. Let $N_1$ and $N_2$ be normal subgroups of a group $G$. To show that $N_1 \cap N_2$ is a normal subgroup, we need to show that for any $g \in G$ and $n \in N_1 \cap N_2$, $g \cdot n \cdot g^{-1} \in N_1 \cap N_2$.
 
-\item[{\bf 10.10.}]
-Let $H$ be a subgroup of index 2 of a group $G$. Prove that $H$ must
-be a normal subgroup of $G$. Conclude that $S_n$ is not simple for $n \geq 3$.
+Since $n \in N_1 \cap N_2$, we have $n \in N_1$ and $n \in N_2$. Since $N_1$ and $N_2$ are normal subgroups, we have $g \cdot n \cdot g^{-1} \in N_1$ and $g \cdot n \cdot g^{-1} \in N_2$. Therefore, $g \cdot n \cdot g^{-1} \in N_1 \cap N_2$.
 
-\probskip
+Hence, $N_1 \cap N_2$ is a normal subgroup of $G$.
 
-\item[{\bf 10.11.}]
-If a group $G$ has exactly one subgroup $H$ of order $k$, prove that
-$H$ is normal in $G$. 
+10.10: Let $H$ be a subgroup of index 2 of a group $G$. To prove that $H$ is a normal subgroup of $G$, we need to show that for any $g \in G$, $g \cdot H = H \cdot g$.
 
-\probskip
+Since $H$ has index 2 in $G$, there are exactly two left cosets and two right cosets of $H$ in $G$. Let $H$ and $gH$ be the left cosets of $H$ in $G$, and let $H$ and $Hg$ be the right cosets of $H$ in $G$. Since there are only two left cosets and two right cosets, we must have $gH = H$ and $Hg = H$.
 
+Therefore, $g \cdot H = H \cdot g$, and hence $H$ is a normal subgroup of $G$.
 
-\item[{\bf 10.13.}]
-Recall that the {\bf center} of a group $G$ is the set 
-\[
-Z(G) = \{ x \in G : xg = gx \text{ for all $g \in G$ } \}.
-\]
-\begin{enumerate}
-\item[(a)]
-Calculate the center of $S_3$.
-%%  \item
-%% Calculate the center of $GL_2 ( {\mathbb R} )$.
-\item[(c)]
-Show that the center of any group $G$ is a normal subgroup of $G$. 
- \item[(d)]
-If $G / Z(G)$ is cyclic, show that $G$ is abelian.\footnote{Hint: Let $Z := Z(G)$.  If
-  $G/Z$ is cyclic then there exists $x\in G$ such that for each $a\in G$ 
-  there exists $m\in \N$ such that $aZ = x^mZ$.
-  Fix $a, b\in G$ and show $ab = ba$ using the fact that $aZ = x^mZ$ and
-  $bZ = x^nZ$ for some $m$ and $n$.}
-\end{enumerate}
-\probskip 
+10.11: If a group $G$ has exactly one subgroup $H$ of order $k$, we can prove that $H$ is normal in $G$ by showing that for any $g \in G$, $g \cdot H = H \cdot g$.
 
-\item[{\bf 10.14.}]
-Let $G$ be a group. 
-The \boldemph{commutator subgroup} of $G$, denoted by $G'$, 
-consists of all finite products of elements in
-$G$ of the form $aba^{-1}b^{-1}$, as $a$ and $b$ range over elements of $G$. 
-That is, $G' = \< \{aba^{- 1} b^{-1} \mid a, b \in G\}\>$.
-\begin{enumerate}
-\item Show that $G'$ is a normal subgroup of $G$.
-\item Let $N$ be  a normal subgroup of $G$.  Prove that $G/N$ is abelian if
-and only if $N$ contains the commutator subgroup of $G$.
-\end{enumerate}
-\end{enumerate}
+Let $g \in G$. Since $H$ is a subgroup of $G, g \cdot H$ is a subset of $G$. Since $H$ is the only subgroup of order $k$, $g \cdot H$ must also have order $k$. Therefore, $g \cdot H = H$.
 
+Similarly, $H \cdot g$ is a subset of $G$ and has order $k$. Therefore, $H \cdot g = H$.
 
+Hence, $g \cdot H = H \cdot g$, and therefore $H$ is a normal subgroup of $G$.
 
-\end{document}
+10.13:
+(a) The center of $S_3$ is the set $\{e\}$, where $e$ is the identity element of $S_3$. This is because in $S_3$, the only element that commutes with all other elements is the identity element.
+
+(c) The center of any group $G$ is a normal subgroup of $G$. To prove this, we need to show that for any $g \in G$ and $z \in Z(G)$, $g \cdot z \cdot g^{-1} \in Z(G)$.
+
+Let $g \in G$ and $z \in Z(G)$. Since $z \in Z(G)$, we have $z \cdot a = a \cdot z$ for all $a \in G$. Now, consider $g \cdot z \cdot g^{-1} \cdot a$. We can rewrite this expression as $(g \cdot z \cdot g^{-1}) \cdot (g \cdot a)$. Since $z \cdot a = a \cdot z$ for all $a \in G$, we have $(g \cdot z \cdot g^{-1}) \cdot (g \cdot a) = g \cdot (z \cdot a) = g \cdot (a \cdot z) = (g \cdot a) \cdot z = (g \cdot a) \cdot (g \cdot z)$. Therefore, $g \cdot z \cdot g^{-1} \cdot a = (g \cdot a) \cdot (g \cdot z)$.
+
+Since $g \cdot a$ and $g \cdot z$ are both elements of $G$, we have $g \cdot z \cdot g^{-1} \in Z(G)$.
+
+Hence, the center of $G$ is a normal subgroup of $G$.
+
+(d) If $G / Z(G)$ is cyclic, then $G$ is abelian. To prove this, let $N$ be the factor group $G / Z(G)$. Since $N$ is cyclic, there exists an element $x \in G$ such that for each $a \in G$, there exists $m \in \mathbb{N}$ such that $aZ = x^mZ$, where $Z$ is the equivalence class of $Z(G)$ that contains the identity element of $G$.
+
+Fix $a, b \in G$. We want to show that $ab = ba$. Since $aZ = x^mZ$ and $bZ = x^nZ$ for some $m$ and $n$, we have $a \cdot x^m = x^m \cdot a$ and $b \cdot x^n = x^n \cdot b$. Multiplying these equations, we get $(a \cdot x^m) \cdot (b \cdot x^n) = (x^m \cdot a) \cdot (x^n \cdot b)$. Simplifying, we have $a \cdot (x^m \cdot b) \cdot x^n = (x^m \cdot a) \cdot (b \cdot x^n)$. Since $x^m \cdot b$ and $x^n \cdot a$ are both elements of $G$, we have $a \cdot (x^m \cdot b) \cdot x^n = (x^m \cdot a) \cdot (b \cdot x^n)$. Canceling $x^n$ from both sides, we get $a \cdot (x^m \cdot b) = (x^m

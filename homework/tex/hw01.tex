@@ -46,16 +46,20 @@ Describe each of the following sets.
 \begin{enumerate}
 
 \item
-$A \cap B$
+$A \cap B$ \\
+\textbf{Answer:} $A \cap B = \emptyset$ (the empty set), since there are no numbers that are both even and prime.
 
 \item
-$B \cap C$
+$B \cap C$ \\
+\textbf{Answer:} $B \cap C = \{5\}$, since 5 is the only number that is both prime and a multiple of 5.
 
 \item
-$A \cup B$
+$A \cup B$ \\
+\textbf{Answer:} $A \cup B = \{2, 3, 5, 7, 11, 13, \ldots\}$, which is the set of all prime numbers.
 
 \item
-$A \cap (B \cup C)$
+$A \cap (B \cup C)$ \\
+\textbf{Answer:} $A \cap (B \cup C) = A$, since $B \cup C$ includes all prime numbers and multiples of 5, and $A$ only contains even numbers.
 
 \end{enumerate}
 \end{multicols}
@@ -70,16 +74,20 @@ $D = \emptyset$, list all of the elements in each of the following sets.
 \begin{enumerate}
 
 \item
-$A \times B$
+$A \times B$ \\
+\textbf{Answer:} $A \times B = \{ (a, 1), (a, 2), (a, 3), (b, 1), (b, 2), (b, 3), (c, 1), (c, 2), (c, 3) \}$
 
 \item
-$B \times A$
+$B \times A$ \\
+\textbf{Answer:} $B \times A = \{ (1, a), (1, b), (1, c), (2, a), (2, b), (2, c), (3, a), (3, b), (3, c) \}$
 
 \item
-$A \times B \times C$
+$A \times B \times C$ \\
+\textbf{Answer:} $A \times B \times C = \{ (a, 1, x), (a, 2, x), (a, 3, x), (b, 1, x), (b, 2, x), (b, 3, x), (c, 1, x), (c, 2, x), (c, 3, x) \}$
 
 \item
-$A \times D$
+$A \times D$ \\
+\textbf{Answer:} $A \times D = \emptyset$, since $D$ is the empty set.
 
 \end{enumerate}
 \end{multicols}
@@ -88,14 +96,33 @@ $A \times D$
 
 %% 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 3.}]
-Find an example of two nonempty sets $A$ and $B$ for which $A \times B = B \times A$.
+Find an example of two nonempty sets $A$ and $B$ for which $A \times B = B \times A$. \\
+\textbf{Answer:} Let $A = \{1\}$ and $B = \{2\}$. Then $A \times B = \{(1, 2)\}$ and $B \times A = \{(2, 1)\}$, so $A \times B = B \times A$.
 
 \medskip
-
  
 %% 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[{\bf 7.}]
-Prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+Prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$. \\
+\textbf{Answer:} To prove this equality, we need to show that every element in $A \cap (B \cup C)$ is also in $(A \cap B) \cup (A \cap C)$, and vice versa.
+
+Let $x$ be an arbitrary element in $A \cap (B \cup C)$. This means that $x$ is in both $A$ and $B \cup C$. Since $x$ is in $B \cup C$, it must be either in $B$ or in $C$. 
+
+Case 1: $x$ is in $B$. In this case, $x$ is in both $A$ and $B$, so $x$ is in $A \cap B$. Therefore, $x$ is also in $(A \cap B) \cup (A \cap C)$.
+
+Case 2: $x$ is in $C$. In this case, $x$ is in both $A$ and $C$, so $x$ is in $A \cap C$. Therefore, $x$ is also in $(A \cap B) \cup (A \cap C)$.
+
+Since $x$ was an arbitrary element in $A \cap (B \cup C)$, we have shown that every element in $A \cap (B \cup C)$ is also in $(A \cap B) \cup (A \cap C)$.
+
+Now, let $y$ be an arbitrary element in $(A \cap B) \cup (A \cap C)$. This means that $y$ is either in $A \cap B$ or in $A \cap C$.
+
+Case 1: $y$ is in $A \cap B$. In this case, $y$ is in both $A$ and $B$, so $y$ is in $A$. Therefore, $y$ is also in $A \cap (B \cup C)$.
+
+Case 2: $y$ is in $A \cap C$. In this case, $y$ is in both $A$ and $C$, so $y$ is in $A$. Therefore, $y$ is also in $A \cap (B \cup C)$.
+
+Since $y$ was an arbitrary element in $(A \cap B) \cup (A \cap C)$, we have shown that every element in $(A \cap B) \cup (A \cap C)$ is also in $A \cap (B \cup C)$.
+
+Therefore, $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
 
 \medskip
 
@@ -104,11 +131,13 @@ Prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
 \begin{enumerate}
   
 \item
-Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is one-to-one but not onto. 
- 
+Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is one-to-one but not onto. \\
+\textbf{Answer:} One example of such a function is $f(x) = 2x$. This function is one-to-one because if $f(x) = f(y)$, then $2x = 2y$, which implies $x = y$. However, this function is not onto because there are natural numbers that are not in the range of $f$, such as 1.
+
 \item
-Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is onto but not one-to-one. 
- 
+Define a function $f: {\mathbb N} \rightarrow {\mathbb N}$ that is onto but not one-to-one. \\
+\textbf{Answer:} One example of such a function is $f(x) = \lceil x/2 \rceil$. This function is onto because for every natural number $y$, we can find a natural number $x$ such that $f(x) = y$. However, this function is not one-to-one because, for example, $f(1) = f(2) = 1$.
+
 \end{enumerate}
 
 \medskip
@@ -119,82 +148,7 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$ be maps.
 \begin{enumerate}
  
 \item
-If $f$ and $g$ are both one-to-one functions, show that $g \circ f$
-is one-to-one. 
- 
-\item
-If $g \circ f$ is onto, show that $g$ is onto.
- 
-\item
-If $g \circ f$ is one-to-one, show that $f$ is one-to-one.
- 
-\item
-If $g \circ f$ is one-to-one and $f$ is onto, show that $g$ is
-one-to-one.
- 
-\item
-If $g \circ f$ is onto and $g$ is one-to-one, show that $f$ is onto.
- 
-\end{enumerate}
+If $f$ and $g$ are both one-to-one functions, show that $g \circ f$ is one-to-one. \\
+\textbf{Answer:} To show that $g \circ f$ is one-to-one, we need to prove that if $(g \circ f)(x) = (g \circ f)(y)$, then $x = y$.
 
-\medskip
-
-%% 24 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 24.}]
-Let $f: X \rightarrow Y$ be a map with $A_1, A_2 \subset X$ and $B_1, B_2 \subset Y$. 
-\begin{enumerate}
- 
-\item
-Prove $f( A_1 \cup A_2 ) = f( A_1) \cup f( A_2 )$.
- 
-\item
-Prove $f( A_1 \cap A_2 ) \subset f( A_1) \cap f( A_2 )$.  Give an example in which equality fails.
- 
-\item
-Prove $f^{-1}( B_1 \cup B_2 ) = f^{-1}( B_1) \cup f^{-1}(B_2 )$, where
-\[
-f^{-1}(B) = \{ x \in X : f(x) \in B \}.
-\]
- 
-\item
-Prove $f^{-1}( B_1 \cap B_2 ) = f^{-1}( B_1) \cap f^{-1}( B_2 )$. 
- 
-\item
-Prove $f^{-1}( Y \setminus B_1 ) = X \setminus f^{-1}( B_1)$.
- 
-\end{enumerate}
-
-\medskip
-
-%% 25 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[{\bf 25.}]
-Determine whether or not the following relations are equivalence relations on the given set.  If the relation is an equivalence relation, describe the partition given by it.  If the relation is not an equivalence relation, state why it fails to be one.
-\begin{multicols}{2}
-\begin{enumerate}
- 
-\item
-$x \sim y$ in ${\mathbb R}$ if $x \geq y$
- 
-\item
-$m \sim n$ in ${\mathbb Z}$ if $mn > 0$
- 
-\item
-$x \sim y$ in ${\mathbb R}$ if $|x - y| \leq 4$
- 
-\item
-$m \sim n$ in ${\mathbb Z}$ if $m \equiv n \pmod{6}$
- 
-\end{enumerate}
-\end{multicols}
- 
-\medskip
-
- 
-\item[{\bf 28.}]
-Find the error in the following argument by providing a counterexample. ``The
-reflexive property is redundant in the axioms for an equivalence relation.  If
-$x \sim y$, then $y \sim x$ by the symmetric property.  Using the transitive
-property, we can deduce that $x \sim x$.''
- 
-\end{enumerate}
-\end{document}
+Let $(

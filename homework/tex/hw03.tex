@@ -1,3 +1,5 @@
+Certainly! Here's an updated version of the file with answers added:
+
 \documentclass[12pt,reqno]{amsart}
 \usepackage[top=1.5cm, left=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
 \renewcommand{\baselinestretch}{1.2}
@@ -45,20 +47,32 @@ Find all $x \in {\mathbb Z}$ satisfying each of the following equations.
 \item 
 $3x \equiv 2 \pmod{ 7}$
 
+\textbf{Answer:} The solutions are $x \equiv 3 \pmod{7}$.
+
 \item
 $5x + 1 \equiv 13 \pmod{ 23}$
+
+\textbf{Answer:} The solutions are $x \equiv 4 \pmod{23}$.
 
 \item
 $5x + 1 \equiv 13 \pmod{ 26}$
 
+\textbf{Answer:} The solutions are $x \equiv 4 \pmod{26}$.
+
 \item
 $9x \equiv 3 \pmod{ 5}$
+
+\textbf{Answer:} The solutions are $x \equiv 2 \pmod{5}$.
 
 \item
 $5x \equiv 1 \pmod{ 6}$
 
+\textbf{Answer:} The solutions are $x \equiv 5 \pmod{6}$.
+
 \item
 $3x \equiv 1 \pmod{ 6}$
+
+\textbf{Answer:} The solutions are $x \equiv 3 \pmod{6}$.
 
 \end{enumerate}
 \end{multicols}
@@ -83,6 +97,8 @@ d & d & a & b & c
 \end{array}
 \]
 
+\textbf{Answer:} This table does not form a group because the operation is not associative.
+
 \item
 \[
 \begin{array}{c|cccc}
@@ -95,6 +111,8 @@ d & d & c & b & a
 \end{array}
 \]
  
+\textbf{Answer:} This table forms a group.
+
 \item
 \[
 \begin{array}{c|cccc}
@@ -106,6 +124,8 @@ c & c & d & a & b \\
 d & d & a & b & c
 \end{array}
 \]
+
+\textbf{Answer:} This table forms a group.
 
 \item
 \[
@@ -119,6 +139,8 @@ d & d & d & b & c
 \end{array}
 \]
 
+\textbf{Answer:} This table does not form a group because not every element has an inverse.
+
 \end{enumerate}
 \end{multicols}
 
@@ -129,8 +151,35 @@ d & d & d & b & c
 Write out Cayley tables for groups formed by the symmetries of a
 rectangle and for $({\mathbb Z}_4, +)$. How many elements are in each
 group? Are the groups the same? Why or why not? 
- 
- 
+
+\textbf{Answer:} The Cayley table for the symmetries of a rectangle is as follows:
+
+\[
+\begin{array}{c|cccc}
+\circ & e & r & h & v \\
+\hline
+e & e & r & h & v \\
+r & r & e & v & h \\
+h & h & v & e & r \\
+v & v & h & r & e
+\end{array}
+\]
+
+The Cayley table for $({\mathbb Z}_4, +)$ is as follows:
+
+\[
+\begin{array}{c|cccc}
++ & 0 & 1 & 2 & 3 \\
+\hline
+0 & 0 & 1 & 2 & 3 \\
+1 & 1 & 2 & 3 & 0 \\
+2 & 2 & 3 & 0 & 1 \\
+3 & 3 & 0 & 1 & 2
+\end{array}
+\]
+
+Both groups have 4 elements, but they are not the same group. The group of symmetries of a rectangle is non-abelian, while $({\mathbb Z}_4, +)$ is an abelian group.
+
 \medskip
 
 %% 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,7 +189,26 @@ symmetries is a group. Give a Cayley table for the symmetries. How
 many ways can the vertices of a square be permuted?  Is each
 permutation necessarily a symmetry of the square?  The symmetry group
 of the square is denoted by $D_4$.
- 
+
+\textbf{Answer:} The symmetries of a square are the identity ($e$), rotations ($r$, $r^2$, $r^3$), and reflections ($h$, $v$, $d$, $a$). The Cayley table for $D_4$ is as follows:
+
+\[
+\begin{array}{c|cccccccc}
+\circ & e & r & r^2 & r^3 & h & v & d & a \\
+\hline
+e & e & r & r^2 & r^3 & h & v & d & a \\
+r & r & r^2 & r^3 & e & d & a & h & v \\
+r^2 & r^2 & r^3 & e & r & v & d & a & h \\
+r^3 & r^3 & e & r & r^2 & a & h & v & d \\
+h & h & d & v & a & e & r^2 & r^3 & r \\
+v & v & a & h & d & r^2 & e & r & r^3 \\
+d & d & h & a & v & r^3 & r & e & r^2 \\
+a & a & v & d & h & r & r^3 & r^2 & e
+\end{array}
+\]
+
+There are 4! = 24 ways to permute the vertices of a square. Not every permutation is a symmetry of the square. Only the permutations that preserve the shape and orientation of the square are symmetries.
+
 \medskip
 
 %% 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,7 +216,18 @@ of the square is denoted by $D_4$.
 Let $S = {\mathbb R} \setminus \{ -1 \}$ and define a binary operation on
 $S$ by $a \ast b = a + b +ab$. Prove that $(S, \ast)$ is an abelian
 group.
- 
+
+\textbf{Answer:} To prove that $(S, \ast)$ is an abelian group, we need to show that it satisfies the group axioms: closure, associativity, identity, inverse, and commutativity.
+
+\begin{itemize}
+    \item \textbf{Closure:} For any $a, b \in S$, $a \ast b = a + b + ab$ is also in $S$ since $-1$ is excluded from $S$.
+    \item \textbf{Associativity:} The operation $\ast$ is associative since $(a \ast b) \ast c = a + b + ab + c + (a + b + ab)c = a + b + c + ab + ac + bc + abc = a + (b + c + bc) + (a + b + ab)(b + c + bc) = a \ast (b \ast c)$ for all $a, b, c \in S$.
+    \item \textbf{Identity:} The identity element is 0 since $a \ast 0 = a + 0 + a \cdot 0 = a$ for all $a \in S$.
+    \item \textbf{Inverse:} For any $a \in S$, the inverse element is $-1 - a$ since $a \ast (-1 - a) = a + (-1 - a) + a(-1 - a) = -1$.
+    \item \textbf{Commutativity:} The operation $\ast$ is commutative since $a \ast b = a + b + ab = b + a + ba = b \ast a$ for all $a, b \in S$.
+\end{itemize}
+
+Therefore, $(S, \ast)$ is an abelian group.
 
 \medskip
 
@@ -165,7 +244,5 @@ Let ${\mathbb Z}_2^n = \{ (a_1, a_2, \ldots, a_n) : a_i \in {\mathbb Z}_2
 \]
 Prove that ${\mathbb Z}_2^n$ is a group under this operation. This group
 is important in algebraic coding theory. 
- 
 
-\end{enumerate}
-\end{document}
+\textbf{Answer:} To prove that ${\mathbb Z}_2^n$ is a group under the given operation, we need
